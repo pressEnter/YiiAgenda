@@ -21,7 +21,7 @@ app\config\AppAsset::register($this);
 <?php $this->beginBody(); ?>
 <div class="container">
 	<div class="masthead">
-		<h3 class="muted">My Company</h3>
+		<h3 class="muted">Agenda</h3>
 
 		<div class="navbar">
 			<div class="navbar-inner">
@@ -30,8 +30,8 @@ app\config\AppAsset::register($this);
 						'options' => array('class' => 'nav'),
 						'items' => array(
 							array('label' => 'Home', 'url' => array('/site/index')),
-							array('label' => 'About', 'url' => array('/site/about')),
-							array('label' => 'Contact', 'url' => array('/site/contact')),
+							//array('label' => 'About', 'url' => array('/site/about')),
+							//array('label' => 'Contact', 'url' => array('/site/contact')),
 							Yii::$app->user->isGuest ?
 								array('label' => 'Login', 'url' => array('/site/login')) :
 								array('label' => 'Logout (' . Yii::$app->user->identity->username .')' , 'url' => array('/site/logout')),
@@ -51,7 +51,7 @@ app\config\AppAsset::register($this);
 	<hr>
 
 	<div class="footer">
-		<p>&copy; My Company <?php echo date('Y'); ?></p>
+		<p>&copy; pressEnter <?php echo date('Y'); ?></p>
 		<p>
 			<?php echo Yii::powered(); ?>
 			Template by <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a>

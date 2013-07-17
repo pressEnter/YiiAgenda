@@ -1,9 +1,35 @@
 <?php
+use yii\widgets\LinkPager;
 /**
  * @var yii\base\View $this
  */
-$this->title = 'Welcome';
+$this->title = 'Agenda';
 ?>
+<table class="table table-bordered table-hover">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Title</th>
+			<th>Name</th>
+		</tr>	
+	</thead>
+	<tbody>
+	<?php foreach($cards as $card): ?>
+		<tr>
+			<td><?php echo $card->id; ?></td>
+			<td><?php echo $card->title; ?></td>
+			<td><?php echo $card->name; ?></td>
+		</tr>
+	<?php endforeach; ?>
+	</tbody>
+</table>
+<?php 
+echo LinkPager::widget(array(
+	'pagination' => $pages,
+));
+?>
+<!--
+
 <div class="jumbotron">
 	<h1>Welcome!</h1>
 
@@ -13,8 +39,9 @@ $this->title = 'Welcome';
 </div>
 
 <hr>
-
+-->
 <!-- Example row of columns -->
+<!--
 <div class="row-fluid">
 	<div class="span4">
 		<h2>Heading</h2>
@@ -44,4 +71,4 @@ $this->title = 'Welcome';
 		<p><a class="btn" href="#">View details &raquo;</a></p>
 	</div>
 </div>
-
+-->
