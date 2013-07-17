@@ -20,6 +20,12 @@ return array(
 				),
 			),
 		),
+		'db' => array(
+			'class' => 'yii\db\Connection',
+			'dsn' => 'mysql:host=localhost;dbname=database',
+			'username' => 'db_user',
+			'password' => 'db_pass',
+		),
 	),
 	'params' => $params,
 );
