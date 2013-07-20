@@ -11,6 +11,7 @@ $this->title = 'Agenda';
 			<th>ID</th>
 			<th>Title</th>
 			<th>Name</th>
+			<th>Category</th>
 		</tr>	
 	</thead>
 	<tbody>
@@ -19,6 +20,7 @@ $this->title = 'Agenda';
 			<td><?php echo $card->id; ?></td>
 			<td><?php echo $card->title; ?></td>
 			<td><?php echo $card->name; ?></td>
+			<td><?php echo $card->category->name . " | " . $card->category->color; ?></td>
 		</tr>
 	<?php endforeach; ?>
 	</tbody>

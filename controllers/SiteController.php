@@ -7,6 +7,7 @@ use yii\web\Controller;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Card;
+use app\models\CardCategory;
 use yii\data\Pagination;
 
 class SiteController extends Controller
@@ -23,13 +24,12 @@ class SiteController extends Controller
 
 	public function actionIndex()
 	{
-		$query = Card::find()->select('id, name, title');
+		$query = Card::find();
 		$countQuery = clone $query;
 		$pages = new Pagination(array('totalCount' => $countQuery->count()));
 		$cards = $query->offset($pages->offset)
 			->limit($pages->limit)
 			->all();
-
 		return $this->render('index', array(
 			'cards' => $cards,
 			'pages' => $pages,
