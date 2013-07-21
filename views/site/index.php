@@ -1,5 +1,8 @@
 <?php
 use yii\widgets\LinkPager;
+use yii\widgets\Menu;
+use yii\bootstrap\Nav;
+use yii\helpers\Html;
 /**
  * @var yii\base\View $this
  */
@@ -12,6 +15,7 @@ $this->title = 'Agenda';
 			<th>Title</th>
 			<th>Name</th>
 			<th>Category</th>
+			<th>Actions</th>
 		</tr>	
 	</thead>
 	<tbody>
@@ -21,6 +25,18 @@ $this->title = 'Agenda';
 			<td><?php echo $card->title; ?></td>
 			<td><?php echo $card->name; ?></td>
 			<td><?php echo $card->category->name . " | " . $card->category->color; ?></td>
+			<td>
+			<?php echo Nav::widget(array(
+				'options' => array('class' => 'nav nav-list'),
+				'encodeLabels' => false,
+				'items' => array(
+					array(
+						'label' => '<i class="icon-zoom-in"></i> Details',
+						'url' => array('/site/details', 'card_id' => $card->id),
+					),
+				),
+			)); ?>
+			</td>
 		</tr>
 	<?php endforeach; ?>
 	</tbody>

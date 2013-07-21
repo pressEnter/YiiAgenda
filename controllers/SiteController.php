@@ -26,13 +26,25 @@ class SiteController extends Controller
 	{
 		$query = Card::find();
 		$countQuery = clone $query;
-		$pages = new Pagination(array('totalCount' => $countQuery->count()));
+		$pages = new Pagination(array('totalCount' => $countQuery->count(), 'pageSize' => 5));
 		$cards = $query->offset($pages->offset)
 			->limit($pages->limit)
+			->with('category')
 			->all();
 		return $this->render('index', array(
 			'cards' => $cards,
 			'pages' => $pages,
+		));
+	}
+	
+	/**
+	 * Card details page
+	 * 
+	 */ 
+	public function actionDetails($card_id){
+		$card = Card::find($card_id);
+		return $this->render('details', array(
+			'card' => $card,
 		));
 	}
 
