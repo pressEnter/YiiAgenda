@@ -17,10 +17,27 @@ use yii\web\HttpException;
  */
 class DefaultController extends Controller
 {
-	/**
-	 * @var  \yii\debug\Module
-	 */
-	public $module;
+	
+	public function behaviors()
+	{
+		return array(
+			'access' => array(
+				'class' => \yii\web\AccessControl::className(),
+				'rules' => array(
+					// allow authenticated users
+					array(
+						'allow' => true,
+						'roles' => array('@'),
+					),
+					// deny all
+					array(
+						'allow' => false,
+					),
+				),
+			),
+		);
+	}
+
 
 	public function actionIndex()
 	{
