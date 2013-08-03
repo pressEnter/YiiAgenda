@@ -11,11 +11,11 @@ echo DetailView::widget(array(
 	'model' => $card,
 	'attributes' => array(
 		'id',
-		'title',
+		'title:html',
 		'name',
 		array(
 			'label' => 'Category',
-			'value' => $card->category->name . " | " . $card->category->color,
+			'value' => $card['category']['name'] . " | " . $card['category']['color'],
 		),
 	),
 ));

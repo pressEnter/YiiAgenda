@@ -1,17 +1,63 @@
 [
     {
+        "name": "yiisoft/yii2-composer",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yiisoft/yii2-composer.git",
+            "reference": "69ffec54b61a3b78e68cb218c2cf2dec1c6fbbcc"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/69ffec54b61a3b78e68cb218c2cf2dec1c6fbbcc",
+            "reference": "69ffec54b61a3b78e68cb218c2cf2dec1c6fbbcc",
+            "shasum": ""
+        },
+        "require": {
+            "yiisoft/yii2": "*"
+        },
+        "time": "2013-07-11 15:26:57",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "yii\\composer": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Qiang Xue",
+                "email": "qiang.xue@gmail.com",
+                "homepage": "http://www.yiiframework.com/",
+                "role": "Founder and project lead"
+            }
+        ],
+        "description": "The composer integration for the Yii framework",
+        "keywords": [
+            "composer",
+            "install",
+            "update",
+            "yii"
+        ]
+    },
+    {
         "name": "yiisoft/yii2",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/yiisoft/yii2-framework.git",
-            "reference": "3ce3b44deb0aca1abce82c970a5b65614aa6b995"
+            "reference": "81f1ac2d6a46eb3ebe0d2d15f6983a998cc1aeb9"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/3ce3b44deb0aca1abce82c970a5b65614aa6b995",
-            "reference": "3ce3b44deb0aca1abce82c970a5b65614aa6b995",
+            "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/81f1ac2d6a46eb3ebe0d2d15f6983a998cc1aeb9",
+            "reference": "81f1ac2d6a46eb3ebe0d2d15f6983a998cc1aeb9",
             "shasum": ""
         },
         "require": {
@@ -25,7 +71,7 @@
             "smarty/smarty": "Required by SmartyViewRenderer.",
             "twig/twig": "Required by TwigViewRenderer."
         },
-        "time": "2013-07-17 01:43:17",
+        "time": "2013-08-03 02:07:26",
         "type": "library",
         "installation-source": "source",
         "autoload": {
@@ -92,52 +138,6 @@
         "homepage": "http://www.yiiframework.com/",
         "keywords": [
             "framework",
-            "yii"
-        ]
-    },
-    {
-        "name": "yiisoft/yii2-composer",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/yiisoft/yii2-composer.git",
-            "reference": "69ffec54b61a3b78e68cb218c2cf2dec1c6fbbcc"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/69ffec54b61a3b78e68cb218c2cf2dec1c6fbbcc",
-            "reference": "69ffec54b61a3b78e68cb218c2cf2dec1c6fbbcc",
-            "shasum": ""
-        },
-        "require": {
-            "yiisoft/yii2": "*"
-        },
-        "time": "2013-07-11 15:26:57",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "yii\\composer": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Qiang Xue",
-                "email": "qiang.xue@gmail.com",
-                "homepage": "http://www.yiiframework.com/",
-                "role": "Founder and project lead"
-            }
-        ],
-        "description": "The composer integration for the Yii framework",
-        "keywords": [
-            "composer",
-            "install",
-            "update",
             "yii"
         ]
     }
