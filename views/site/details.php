@@ -11,7 +11,7 @@ echo DetailView::widget(array(
 	'model' => $card,
 	'attributes' => array(
 		'id',
-		'title:html',
+		'title:raw',
 		'name',
 		array(
 			'label' => 'Category',
