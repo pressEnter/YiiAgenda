@@ -21,6 +21,7 @@ app\config\AppAsset::register($this);
 <body>
 <?php $this->beginBody(); ?>
 <div class="container">
+	
 	<div class="masthead">
 		<h3 class="muted">Agenda</h3>
 

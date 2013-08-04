@@ -7,10 +7,9 @@ use yii\helpers\Html;
 /**
  * @var yii\base\View $this
  */
-$this->title = 'Agenda - Provider: ' . $provider;
+$this->title = 'Agenda';
 ?>
-<h3>Provider: <?php echo $provider; ?></h3>
-<?php if($provider == 'default'): ?>
+<h3>Provider: Default</h3>
 <table class="table table-bordered table-hover">
 	<thead>
 		<tr>
@@ -49,20 +48,39 @@ echo LinkPager::widget(array(
 	'pagination' => $pages,
 ));
 ?>
-<!--
-
--->
-
-<?php elseif($provider == 'array'): ?>
+<h3>Provider: Array</h3>
 <?php 
 echo GridView::widget(array(
 	'dataProvider' => $arrayProvider,
+	'layout' => "{summary}\n{items}\n{pager}",
+	'columns' => array(
+		'id',
+		'title',
+		'name',
+		array(
+			'header' => 'Category',
+		),
+		array(
+			'header' => 'Actions',
+		),
+	),
 ));
 ?>
-<?php elseif($provider == 'active-record'): ?>
+<h3>Provider: Active</h3>
 <?php 
 echo GridView::widget(array(
 	'dataProvider' => $activeProvider,
+	'columns' => array(
+		'id',
+		'title',
+		'name',
+		array(
+			'header' => 'Category',
+		),
+		array(
+			'header' => 'Actions',
+		),
+	),
 ));
 ?>
-<?php endif; ?>
+<?php //endif; ?>

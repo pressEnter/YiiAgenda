@@ -24,22 +24,21 @@ class SiteController extends Controller
 		);
 	}
 
-	public function actionIndex($provider = 'default')
+	public function actionIndex()
 	{
 		$query = Card::find();
 		$countQuery = clone $query;
-		$pages = new Pagination(array('totalCount' => $countQuery->count(), 'pageSize' => 5));
+		$pages = new Pagination(array('totalCount' => $countQuery->count(), 'pageSize' => 1));
 		$cards = $query->offset($pages->offset)
 			->limit($pages->limit)
 			->with('category')
 			->all();
-		$provider = in_array($provider, array('default', 'array', 'active-record')) ? $provider : 'default';
+
 		return $this->render('index', array(
 			'cards' => $cards,
 			'pages' => $pages,
-			'provider' => $provider,
-			'arrayProvider' => new ArrayDataProvider(array('allItems' => $cards, 'pagination' => array('pageSize' => 1),)),
-			'activeProvider' => new ActiveDataProvider(array('query' => $query, 'pagination' => array('pageSize' => 1),)),
+			'arrayProvider' => new ArrayDataProvider(array('allModels' => Card::find()->all(), 'pagination' => array('pageSize' => 1),)),
+			'activeProvider' => new ActiveDataProvider(array('query' => Card::find(), 'pagination' => array('pageSize' => 1),)),
 		));
 	}
 	
