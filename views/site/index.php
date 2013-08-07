@@ -1,7 +1,7 @@
 <?php
 use yii\widgets\LinkPager;
 use yii\widgets\Menu;
-use yii\widgets\GridView;
+use yii\grid\GridView;
 use yii\bootstrap\Nav;
 use yii\helpers\Html;
 /**
@@ -9,8 +9,9 @@ use yii\helpers\Html;
  */
 $this->title = 'Agenda';
 ?>
-<h3>Provider: Default</h3>
+<h3>Probando las grillas</h3>
 <table class="table table-bordered table-hover">
+	<caption>A mano</caption>
 	<thead>
 		<tr>
 			<th>ID</th>
@@ -48,35 +49,34 @@ echo LinkPager::widget(array(
 	'pagination' => $pages,
 ));
 ?>
-<h3>Provider: Array</h3>
 <?php 
 echo GridView::widget(array(
 	'dataProvider' => $arrayProvider,
 	'layout' => "{summary}\n{items}\n{pager}",
+	'caption' => 'Con ArrayDataProvider',
 	'columns' => array(
+		array(
+			'header' => 'SerialColumn',
+			'class' => 'yii\grid\SerialColumn',
+		),
 		'id',
 		'title',
 		'name',
-		array(
-			'header' => 'Category',
-		),
-		array(
-			'header' => 'Actions',
-		),
 	),
 ));
 ?>
-<h3>Provider: Active</h3>
 <?php 
 echo GridView::widget(array(
 	'dataProvider' => $activeProvider,
+	'caption' => 'Con ActiveDataProvider',
 	'columns' => array(
+		array(
+			//'header' => 'CheckboxColumn',
+			'class' => 'yii\grid\CheckboxColumn',
+		),
 		'id',
 		'title',
 		'name',
-		array(
-			'header' => 'Category',
-		),
 		array(
 			'header' => 'Actions',
 		),
